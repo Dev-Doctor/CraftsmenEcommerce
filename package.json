@@ -1,0 +1,30 @@
+{
+  "name": "craftsmen-ecommerce",
+  "version": "1.0.0",
+  "description": "A E-Commerce Website project made for University",
+  "homepage": "https://github.com/Dev-Doctor/CraftsmenEcommerce#readme",
+  "bugs": {
+    "url": "https://github.com/Dev-Doctor/CraftsmenEcommerce/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dev-Doctor/CraftsmenEcommerce.git"
+  },
+  "license": "GPL-3.0-only",
+  "author": "DevDoctor (Davide Restelli), Jonida Brahimaj, ?? Tatafiore",
+  "type": "commonjs",
+  "main": "./src/app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "swagger": "node ./src/swagger/swagger.js",
+    "start": "node ./src/app.js",
+    "devStart": "npm run swagger && npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
