@@ -1,0 +1,20 @@
+:root {
+    --bg-body-light: #fcf9c2;
+    --bg-footer-light: #bfbd97;
+}
+
+body {
+    background-color: var(--bg-footer-light);
+}
+
+main {
+    background-color: var(--bg-body-light);
+}
+
+nav {
+    background-color: white;
+}
+
+#footer {
+    background-color: var(--bg-footer-light);
+}
