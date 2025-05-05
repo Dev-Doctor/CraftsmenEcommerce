@@ -44,6 +44,7 @@ const productRouter = require('./routes/product.js');
 // imposta il router per ogni route
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
+app.use('/product', productRouter);
 // app.use('/src', express.static('src'));
 
 // imposta la route di swagger
