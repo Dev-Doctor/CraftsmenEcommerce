@@ -501,6 +501,8 @@
     </div>
 
 
+    
+
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"></script>
     <!-- BOOTSTRAP & POPPER -->
@@ -508,6 +510,17 @@
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
+
+    <script>
+        // load the header from its template
+        $.get("./template/header.html", function (data) {
+            $("header").append(data);
+        });
+        // load the footer from its template
+        $.get("./template/footer.html", function (data) {
+            $("footer").append(data);
+        });
+    </script>
 </body>
 
 </html>

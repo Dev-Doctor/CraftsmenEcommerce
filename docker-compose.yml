@@ -5,8 +5,8 @@ services:
     image: postgres:15
     environment:
       POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: appdb
+      POSTGRES_PASSWORD: 40SS&o204bkhrW
+      POSTGRES_DB: CraftsmenEcommerce
     volumes:
       - db_data:/var/lib/postgresql/data
       # not sure abot the following line:
