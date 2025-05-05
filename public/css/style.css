@@ -1,5 +1,6 @@
 :root {
-    --bg-body-light: #fcf9c2;
+    /* --bg-body-light: #fcf9c2; */
+    --bg-body-light: #000;
     --bg-footer-light: #bfbd97;
 }
 

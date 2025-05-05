@@ -42,48 +42,32 @@
 
   <main>
     <div class="container">
-
-    </div>
-    <section class="section my-3">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <!-- ###################### CARD ###################### -->
-            <div class="card" style="width: 18rem;">
+      <section class="row row-cols-auto card-group d-flex justify-content-evenly p-3 g-3" style="width: 100%;"
+        id="card-container">
+        <!-- ###################### CARD ###################### -->
+        <div class="col">
+          <div class="card row" style="width: 18rem;">
+            <div class="p-1 col">
               <img src="resources/test.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Nome prodotto</h5>
-                <h6>🗿🗿🗿❌❌</h6>
-              </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="col">
-              <!-- ###################### CARD ###################### -->
-              <div class="card" style="width: 18rem;">
-                <img src="resources/test.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Nome prodotto</h5>
-                  <h6>🗿🗿🗿❌❌</h6>
-                </div>
-              </div>
+            <div class="col pb-2">
+              <span class="badge text-bg-secondary">New</span>
+              <span class="badge text-bg-secondary">Test</span>
+              <span class="badge text-bg-secondary">Negus</span>
             </div>
-          </div>
-          <div class="col">
-            <div class="col">
-              <!-- ###################### CARD ###################### -->
-              <div class="card" style="width: 18rem;">
-                <img src="resources/test.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Nome prodotto</h5>
-                  <h6>🗿🗿🗿❌❌</h6>
-                </div>
-              </div>
+            <div class="card-body col border-top">
+              <h5 class="card-title">Nome prodotto</h5>
+              <!-- <h6 class="moai">🗿🗿🗿❌❌</h6> -->
+              <h6 class="moai">💥💥💥❌❌</h6>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center p-3">
+              <button class="btn btn-primary" onclick="">Aggiungi al carrello</button>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+        <!-- #################### END CARD #################### -->
+      </section>
+    </div>
   </main>
 
   <div class="container" id="footer">
@@ -145,12 +129,15 @@
   </div>
 
 
+  <audio src="resources/moai.mp3" id="skibidi"></audio>
+
   <!-- JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"></script>
   <!-- BOOTSTRAP & POPPER -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
     crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>
