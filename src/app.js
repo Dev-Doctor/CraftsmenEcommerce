@@ -4,8 +4,6 @@ const bodyParser = require('body-parser');
 // swagger stuff
 const swaggerUi = require('swagger-ui-express'); //integra un doc in modo automatico
 const swaggerDocument = require('./swagger/swagger-output.json'); //espone su pagina web
-// Database module
-const pg = require('pg');
 
 // load env variables
 require('dotenv').config();
@@ -13,6 +11,8 @@ require('dotenv').config();
 // API porta
 const PORT = 6969;
 const app = express();
+
+console.log(require('pg').types)
 
 // imposta l'origine valida, i metodi e gli header
 app.use(cors({
