@@ -15,6 +15,7 @@ CREATE TABLE users (
     name varchar(60) NOT NULL,
     last_name varchar(60) NOT NULL,
     email varchar(60) NOT NULL,
+    password varchar(255) NOT NULL,
     created_at timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
     is_admin boolean DEFAULT false,
     is_artigian boolean DEFAULT false,
@@ -99,3 +100,16 @@ CREATE TABLE reviews (
     FOREIGN KEY product_id REFERENCES products (product_id)
 );
 
+CREATE TABLE categories (
+    category_name varchar(30) NOT NULL,
+    CONSTRAINT categories_pk PRIMARY KEY (category_name)
+);
+
+CREATE TABLE product_categories (
+    category_name varchar(30),
+    product_id int,
+
+    CONSTRAINT product_categories_pk PRIMARY KEY (category_name, product_id),
+    FOREIGN KEY category_name REFERENCES categories (category_name),
+    FOREIGN KEY product_id REFERENCES products (product_id)
+);

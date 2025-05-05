@@ -7,6 +7,9 @@ const swaggerDocument = require('./swagger/swagger-output.json'); //espone su pa
 // Database module
 const pg = require('pg');
 
+// load env variables
+require('dotenv').config();
+
 // API porta
 const PORT = 6969;
 const app = express();
