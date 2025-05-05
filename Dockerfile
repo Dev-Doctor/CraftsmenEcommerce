@@ -1,9 +1,12 @@
 # syntax=docker/dockerfile:1
+FROM node:18-alpine
 
-FROM postgres:17.4
-WORKDIR /usr/local/app
+WORKDIR /app
 
-COPY scripts/create_database.sql ./
-RUN psql -f create_database.sql
+COPY package*.json ./
+RUN npm install
 
-# copia ed esegui i file per populare il database
+COPY ./src .
+
+EXPOSE 6969
+CMD ["npm", "devStart"]
