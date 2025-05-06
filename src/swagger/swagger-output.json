@@ -34,16 +34,10 @@
                 "email": {
                   "example": "any"
                 },
-                "name": {
-                  "example": "any"
-                },
-                "lastname": {
-                  "example": "any"
-                },
                 "password": {
                   "example": "any"
                 },
-                "passed_token": {
+                "token": {
                   "example": "any"
                 }
               }
@@ -59,6 +53,9 @@
           },
           "418": {
             "description": "I'm a teapot"
+          },
+          "498": {
+            "description": ""
           }
         }
       }
