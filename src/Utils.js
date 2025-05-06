@@ -11,6 +11,33 @@ const DataUtils = {
      */
     GenerateToken() {
         return crypto.randomBytes(64).toString('hex');
+    },
+
+    /**
+     * Checks if the given email address is valid using a simplified regex pattern.
+     * <p>
+     * This method currently uses a regex pattern to validate the email address format:
+     * <pre>
+     *     ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$
+     * </pre>
+     * which covers most common cases of valid email addresses. It ensures that the email has the
+     * following structure: local part, `@` symbol, domain part, and a top-level domain.
+     * </p>
+     * <p>
+     * <b>Important:</b><br>
+     * The <a href="https://www.rfc-editor.org/info/rfc5322">RFC 5322</a> simplified regex was meant to be used as the email verification.
+     * It was changed due to problems in the code. It will be reintroduced in a future version.
+     * </p>
+     *
+     * @param {string} email the email address to validate
+     * @return {boolean} {@code true} if the email address is valid according to the current pattern;
+     * {@code false} otherwise
+     */
+    IsEmailValid(email) {
+        if (typeof email == "string") {
+            return email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/);
+        }
+        return false;
     }
 }
 
@@ -26,8 +53,8 @@ const DbUtils = {
      */
     async GetUserDataById(client, user_id) {
         const result = await client.query(queries.USER_BY_ID, [user_id]);
-        
-        if(result.rows.length < 1) {
+
+        if (result.rows.length < 1) {
             return undefined;
         }
 
@@ -67,8 +94,8 @@ const DbUtils = {
      */
     async GetUserDataByEmail(client, email) {
         const result = await client.query(queries.USER_BY_EMAIL, [email]);
-        
-        if(result.rows.length < 1) {
+
+        if (result.rows.length < 1) {
             return undefined;
         }
 
