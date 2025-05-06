@@ -11,8 +11,7 @@ Progetto univerisitario.
 ├── tests/               # Test di automatizzazione
 ├── .env                 # File segreto con dati sensibili
 ```
-## Getting Started
-Clona il progetto e installa le dipendenze di `Node.js`:
-```bash
-npm install
-```
+## Getting started per lavore al progetto
+Se devi lavorare all'API vedi [API Setup](https://github.com/Dev-Doctor/CraftsmenEcommerce/wiki/Development-Setup#setup-api), per il frontend vedi [Frontend Setup](https://github.com/Dev-Doctor/CraftsmenEcommerce/wiki/Development-Setup#setup-frontend) e per il database vedi [Database Setup](https://github.com/Dev-Doctor/CraftsmenEcommerce/wiki/Development-Setup#setup-database).
+
+E' disponibile anche un file [Docker](https://www.docker.com/).
