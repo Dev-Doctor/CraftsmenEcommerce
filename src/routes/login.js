@@ -7,7 +7,7 @@ const { DbUtils, DataUtils } = require('../Utils');
 
 
 router.post('/', async function (req, res) {
-    // get the keys
+    // get the params
     const { email, password, token } = req.body;
 
     console.log(req.body)
@@ -65,6 +65,7 @@ router.post('/', async function (req, res) {
         client.release();
         return res.status(200).send();
     }
+    
     // release the client
     client.release();
     return res.status(400).send();

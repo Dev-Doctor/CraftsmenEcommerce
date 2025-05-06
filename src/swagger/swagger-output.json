@@ -50,12 +50,6 @@
           },
           "400": {
             "description": "Bad Request"
-          },
-          "418": {
-            "description": "I'm a teapot"
-          },
-          "498": {
-            "description": ""
           }
         }
       }
@@ -64,8 +58,11 @@
       "get": {
         "description": "",
         "responses": {
-          "200": {
-            "description": "OK"
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       }
