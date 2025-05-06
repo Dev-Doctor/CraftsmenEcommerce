@@ -43,7 +43,7 @@
                         </div>
                         <!-- ####################### END LOGO ####################### -->
                     </div>
-                    <div class="d-none d-lg-block col-xxl-5 col-lg-5">
+                    <div class="d-none mx-auto d-lg-block col-xxl-5 col-lg-5">
                         <!-- ####################### SEARCH FORM ####################### -->
                         <form class="">
                             <div class="input-group">
@@ -63,17 +63,7 @@
                         </form>
                         <!-- ####################### END SEARCH FORM ####################### -->
                     </div>
-                    <div class="d-none d-lg-block col-xxl-3 col-md-2">
-                        <button type="button" class="text-muted btn btn-outline-gray-400">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="me-2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            Location</button>
-                    </div>
-                    <div class="text-end col-xxl-2 col-lg-2 col-md-6 col-7">
+                    <div class="text-end d-flex ms-auto col-lg-2 col-md-6 col-7">
                         <div class="list-inline">
                             <!-- WHISHLIST -->
                             <div role="button" class="me-5 text-muted position-relative  list-inline-item">
@@ -89,7 +79,8 @@
                                     id="wishlist-count">4</span>
                             </div>
                             <!-- ACCOUNT -->
-                            <div role="button" class="text-muted me-5 list-inline-item" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <div role="button" class="text-muted me-5 list-inline-item" data-bs-toggle="modal"
+                                data-bs-target="#loginModal">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round">
@@ -97,8 +88,6 @@
                                     <circle cx="12" cy="7" r="4"></circle>
                                 </svg>
                             </div>
-                        
-
                             <!-- CART -->
                             <div role="button" class="me-5 me-lg-0 text-muted position-relative list-inline-item">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -501,76 +490,83 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            <form>
-                <div class="mb-3">
-                <label for="loginEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="mb-3">
-                <label for="loginPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p>Don't have an account? <a href="#" data-bs-toggle="modal"
+                                data-bs-target="#registerModal">Sign up</a></p>
+                        <p><a href="#">Forgot password?</a></p>
+                    </div>
                 </div>
-                <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="rememberMe">
-                <label class="form-check-label" for="rememberMe">Remember me</label>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Login</button>
-            </form>
-            <div class="text-center mt-3">
-                <p>Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Sign up</a></p>
-                <p><a href="#">Forgot password?</a></p>
             </div>
-            </div>
-        </div>
         </div>
     </div>
-  
-  <!-- Register Modal -->
-  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="registerModalLabel">Create Account</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Create Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="registerName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="registerName" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerLastname" class="form-label">Lastname</label>
+                            <input type="text" class="form-control" id="registerName" placeholder="Your Lastname">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="registerEmail" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="registerPassword" placeholder="Password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="registerConfirmPassword"
+                                placeholder="Confirm Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p>Already have an account? <a href="#" data-bs-toggle="modal"
+                                data-bs-target="#loginModal">Login</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="registerName" class="form-label">Full Name</label>
-              <input type="text" class="form-control" id="registerName" placeholder="Your Name">
-            </div>
-            <div class="mb-3">
-              <label for="registerEmail" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="registerEmail" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-              <label for="registerPassword" class="form-label">Password</label>
-              <input type="password" class="form-control" id="registerPassword" placeholder="Password">
-            </div>
-            <div class="mb-3">
-              <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
-              <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm Password">
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Register</button>
-          </form>
-          <div class="text-center mt-3">
-            <p>Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></p>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-    
+
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"></script>
