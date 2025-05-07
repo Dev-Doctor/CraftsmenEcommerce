@@ -18,7 +18,7 @@ CREATE TABLE users (
     password varchar(255) NOT NULL,
     created_at timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
     is_admin boolean DEFAULT false,
-    is_artigian boolean DEFAULT false,
+    -- is_artigian boolean DEFAULT false,
 
     CONSTRAINT users_pk PRIMARY KEY (user_id)
 );
@@ -55,18 +55,18 @@ CREATE TABLE order_items (
     unit_price float NOT NULL,
 
     CONSTRAINT order_items_pk PRIMARY KEY (order_id, product_id),
-    FOREIGN KEY (order_id) REFERENCES orders (order_id)
+    FOREIGN KEY (order_id) REFERENCES orders (order_id),
     FOREIGN KEY (product_id) REFERENCES products (product_id)
 );
 
 CREATE TABLE user_tokens (
     user_id int,
-    token string NOT NULL,
+    token text NOT NULL,
     creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     expiration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP + INTERVAL '30 days',
 
-    CONSTRAINT user_tokens_pk PRIMARY KEY (user_id, token),
-    FOREIGN KEY user_id REFERENCES users (user_id)
+    CONSTRAINT (user_tokens_pk) PRIMARY KEY (user_id, token),
+    FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
 CREATE TABLE cart_items (
@@ -75,18 +75,18 @@ CREATE TABLE cart_items (
     quantity int DEFAULT 1,
 
     CONSTRAINT cart_items_pk PRIMARY KEY (user_id, product_id),
-    FOREIGN KEY user_id REFERENCES users (user_id),
-    FOREIGN KEY product_id REFERENCES products (product_id)
+    FOREIGN KEY (user_id) REFERENCES users (user_id),
+    FOREIGN KEY (product_id) REFERENCES products (product_id)
 );
 
-CREATE TABLE transaction (
+CREATE TABLE transactions (
     transaction_id serial,
     order_id int,
     payment_date timestamp,
     status transaction_status,
 
     CONSTRAINT transaction_pk PRIMARY KEY (transaction_id),
-    FOREIGN KEY order_id REFERENCES orders (order_id)
+    FOREIGN KEY (order_id) REFERENCES orders (order_id)
 );
 
 CREATE TABLE reviews (
@@ -96,8 +96,8 @@ CREATE TABLE reviews (
     description text,
     
     CONSTRAINT reviews_pk PRIMARY KEY (user_id, product_id),
-    FOREIGN KEY user_id REFERENCES users (user_id),
-    FOREIGN KEY product_id REFERENCES products (product_id)
+    FOREIGN KEY (user_id) REFERENCES users (user_id),
+    FOREIGN KEY (product_id) REFERENCES products (product_id)
 );
 
 CREATE TABLE categories (
@@ -110,6 +110,15 @@ CREATE TABLE product_categories (
     product_id int,
 
     CONSTRAINT product_categories_pk PRIMARY KEY (category_name, product_id),
-    FOREIGN KEY category_name REFERENCES categories (category_name),
-    FOREIGN KEY product_id REFERENCES products (product_id)
+    FOREIGN KEY (category_name) REFERENCES categories (category_name),
+    FOREIGN KEY (product_id) REFERENCES products (product_id)
+);
+
+CREATE TABLE sellers (
+    user_id int,
+    seller_name varchar(30) NULL,
+    description text NULL,
+
+    CONSTRAINT sellers_pk PRIMARY KEY (user_id),
+    FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
