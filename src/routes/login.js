@@ -10,8 +10,6 @@ router.post('/', async function (req, res) {
     // get the params
     const { email, password, token } = req.body;
 
-    console.log(req.body)
-
     // get a client
     const client = await pool.connect();
 
