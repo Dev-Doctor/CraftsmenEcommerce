@@ -11,5 +11,7 @@ module.exports = {
     SELLER_BY_USER_ID: 'SELECT * FROM sellers WHERE user_id = $1 LIMIT 1',
 
     USER_BY_EMAIL: 'SELECT * FROM users WHERE email = $1 LIMIT 1',
-    USER_BY_ID: 'SELECT * FROM users WHERE user_id = $1 LIMIT 1'
+    USER_BY_ID: 'SELECT * FROM users WHERE user_id = $1 LIMIT 1',
+    // NOT SURE ABOUT THIS
+    USER_BY_TOKEN: 'SELECT * FROM users u JOIN user_tokens ut ON u.user_id = ut.user_id WHERE ut.token = $1 LIMIT 1'
 }

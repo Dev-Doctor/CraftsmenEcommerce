@@ -81,8 +81,7 @@ const DbUtils = {
      */
     async IsEmailAlreadyUsed(client, email) {
         const result = await client.query(queries.USER_BY_EMAIL, [email]);
-        console.log(result.rows.length);
-        console.log(result.rows.length > 0);
+
         return (result.rows.length > 0);
     },
 
@@ -99,7 +98,34 @@ const DbUtils = {
             return undefined;
         }
 
-        return result;
+        return result.rows[0];
+    },
+
+    async GetUserByToken(client, token) {
+        const result = await client.query(queries.USER_BY_TOKEN, [token]);
+
+        if (result.rows.length < 1) {
+            return undefined;
+        }
+
+        return result.rows[0];
+    },
+
+    async IsTokenValid(client, token, del = true) {
+        const result = await client.query(queries.CHECK_USER_TOKEN, [token]);
+
+        if (result.rows.length < 1) {
+            return undefined;
+        }
+
+        if (!(result.rows[0].expiration_date > new Date)) {
+            if (del) {
+                await DeleteToken(client, token);
+            }
+            return false;
+        }
+        
+        return true;
     },
 
     /**
@@ -108,7 +134,7 @@ const DbUtils = {
      * @param {*} token the token to be removed
      */
     async DeleteToken(client, token) {
-        const result = await client.query(queries.DELETE_TOKEN, [token]);
+        await client.query(queries.DELETE_TOKEN, [token]);
     }
 }
 
