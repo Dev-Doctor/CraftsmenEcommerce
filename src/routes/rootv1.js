@@ -17,10 +17,14 @@ router.get('/', (req, res) => {
 const loginRouter = require('./login.js');
 const registerRouter = require('./register.js');
 const productRouter = require('./product.js');
+const sellerRouter = require('./sellers.js');
+const accountRouter = require('./account.js');
 
 // imposta il router per ogni route
 router.use('/login', loginRouter);
 router.use('/register', registerRouter);
+router.use('/seller', sellerRouter);
+router.use('/account', accountRouter);
 
 // imposta la route di swagger
 router.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
