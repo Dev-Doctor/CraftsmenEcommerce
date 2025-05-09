@@ -12,6 +12,9 @@ module.exports = {
 
     USER_BY_EMAIL: 'SELECT * FROM users WHERE email = $1 LIMIT 1',
     USER_BY_ID: 'SELECT * FROM users WHERE user_id = $1 LIMIT 1',
-    // NOT SURE ABOUT THIS
-    USER_BY_TOKEN: 'SELECT * FROM users u JOIN user_tokens ut ON u.user_id = ut.user_id WHERE ut.token = $1 LIMIT 1'
+ 
+    USER_BY_TOKEN: 'SELECT * FROM users u JOIN user_tokens ut ON u.user_id = ut.user_id WHERE ut.token = $1 LIMIT 1',
+
+    UPDATE_PASSWORD: 'UPDATE public.users SET password = $1 WHERE user_id = $2',
+    UPDATE_EMAIL: 'UPDATE public.users SET email = $1 WHERE user_id = $2'
 }

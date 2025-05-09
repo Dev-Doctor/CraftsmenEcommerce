@@ -136,6 +136,16 @@ const DbUtils = {
     async DeleteToken(client, token) {
         await client.query(queries.DELETE_TOKEN, [token]);
     }
+};
+
+const DbUserUtils = {
+    async ChangePassword(client, user_id, new_password) {
+        await client.query(queries.UPDATE_PASSWORD, [new_password, user_id]);
+    },
+
+    async ChangeEmail(client, user_id, new_email) {
+        await client.query(queries.UPDATE_EMAIL, [new_email,  user_id])
+    }
 }
 
-module.exports = { DataUtils, DbUtils };
+module.exports = { DataUtils, DbUtils, DbUserUtils };
