@@ -145,6 +145,10 @@ const DbUserUtils = {
 
     async ChangeEmail(client, user_id, new_email) {
         await client.query(queries.UPDATE_EMAIL, [new_email,  user_id])
+    },
+
+    async DeleteAccount(client, user_id) {
+        // await client.query(queries)
     }
 }
 

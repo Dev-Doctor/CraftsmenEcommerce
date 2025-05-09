@@ -61,6 +61,7 @@ router.put('/email', async function (req, res) {
 
     // check if token is valid
     if (!DbUtils.IsTokenValid(client, authHeader)) {
+        client.release();
         return res.status(401).json({ error: "token expired" }).send();
     }
 
@@ -69,15 +70,39 @@ router.put('/email', async function (req, res) {
     // update the email
     await DbUserUtils.ChangeEmail(client, user.user_id, new_email);
 
+    client.release();
     return res.status(201).send();
 });
 
 router.delete('/delete', async function (req, res) {
-    return res.status(501).json({error:"Not yet implemented"}).send();
+    const authHeader = req.headers['authorization'];
+
+    // check if the headers is present
+    if (!authHeader) {
+        return res.status(401).json({ error: "Missing auth header" }).send();
+    }
+
+    const client = await pool.connect();
+
+    // check if token is valid
+    if (!DbUtils.IsTokenValid(client, authHeader)) {
+        client.release();
+        return res.status(401).json({ error: "token expired" }).send();
+    }
+
+    const user = await DbUtils.GetUserByToken(client, authHeader);
+
+    // UNDECISE IF TO DELETE THE USER OR KEEP THE DATA IN A LOCKED STATE
+    await DbUserUtils.DeleteAccount();
+
+    client.release();
+
+    // STILL NOT YET IMPLEMENTED
+    return res.status(501).json({ error: "Not yet implemented" }).send();
 });
 
 router.post('/seller', async function (req, res) {
-    return res.status(501).json({error:"Not yet implemented"}).send();
+    return res.status(501).json({ error: "Not yet implemented" }).send();
 })
 
 module.exports = router;
