@@ -25,6 +25,7 @@ router.use('/login', loginRouter);
 router.use('/register', registerRouter);
 router.use('/seller', sellerRouter);
 router.use('/account', accountRouter);
+router.use('/product', productRouter);
 
 // imposta la route di swagger
 router.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
