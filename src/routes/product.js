@@ -11,17 +11,18 @@ router.get('/:id', async function (req, res) {
     }
    const client = await pool.connect();
     const result = await pool.query(PRODUCT_BY_ID,[id]);
+    client.release();
     if(result.rows.length < 1){
         return res.status(400).json(
             {error: "no such item"});
     }
-    client.release();
-    res.status(200).json(result.rows[0]
-       /* product_id : result[0].product_id,
-        name: result[0].name,
-        description : result[0].description,
-        user_id : result[0].user_id,*/
-    );
+    
+    res.status(200).json({
+        product_id : result.rows[0].product_id,
+        name: result.rows[0].name,
+        description : result.rows[0].description,
+        user_id : result.rows[0].user_id,
+});
     
 });
 //temporary add product which will go in /seller/products , will add function to utils
