@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>Home | BallzItch - eCommerce</title>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16">
-    <meta name="next-size-adjust">
+    <title>Search Results | BallzItch</title>
 </head>
 
 <body data-bs-theme="light">
@@ -26,8 +20,7 @@
                 </div>
             </div>
         </div>
-        
-<!-- ####################### NAVBAR ####################### -->
+   <!-- ####################### NAVBAR ####################### -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
     <div class="container">
         <!-- Logo -->
@@ -132,7 +125,7 @@
                 </li>
             </ul>
 
-            <!-- Search Form collapsable -->
+            <!-- Search Form Collapsable -->
             <form class="d-lg-none w-100 mt-2">
                 <div class="input-group">
                     <input placeholder="Search for products" class="rounded form-control" type="search">
@@ -149,112 +142,306 @@
 </nav>
 <!-- ####################### END NAVBAR ####################### -->
 
-<!-- Carousel Adds -->
-<section class="mb-5">
-    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        
-        <!-- Slides -->
-        <div class="carousel-inner rounded-3">
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-                <img src="resources/SockAdd.jpg" class="d-block w-100" alt= "">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Get your own socks now!</h5>
-                    <a href="#" class="btn btn-primary">Shop Now</a>
-                </div>
-            </div>
-            
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-                <img src="resources/PastaAdd.jpg" class="d-block w-100" alt="">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Pasta like never before!</h5>
-                    <a href="#" class="btn btn-primary">Shop Now</a>
-                </div>
-            </div>
-            
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-                <img src="resorces/postskibidi.png" class="d-block w-100" alt="">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5> Get diagnosed with skibidi and skip work! </h5>
-                    <a href="#" class="btn btn-primary">Shop Now</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</section>
-    </div>
- 
-    <main>
-    
+    <main class="py-4">
         <div class="container">
             <div class="row">
 
+                <div class="col-12 mb-4">
+                    <h2>Search Results for "Skibidi"</h2>
+                    <p class="text-muted">Showing 1-12 of 48 results</p>
+                </div>
             </div>
+
             <div class="row">
-                <section class="row row-cols-auto card-group d-flex justify-content-evenly p-3 g-3" style="width: 100%;"
-                    id="card-container">
-                    <!-- ###################### CARD ###################### -->
-                    <div class="col">
-                        <div class="card row" style="width: 18rem;">
-                            <div class="p-1 col">
-                                <img src="resources/test.jpg" class="card-img-top" alt="...">
+                <!-- Filter Sidebar Collapsible -->
+                <div class="col-lg-3 mb-4">
+                    <div class="card">
+                        <div class="card-header bg-light d-flex justify-content-between align-items-center d-lg-none" 
+                             data-bs-toggle="collapse" href="#filterCollapse" role="button">
+                            <h5 class="mb-0">Filters</h5>
+                            <span class="bi bi-chevron-down"></span>
+                        </div>
+                        <div class="card-body collapse d-lg-block" id="filterCollapse">
+                            <!-- Price Range Filter -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Price Range</h5>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>$10</span>
+                                    <span>$500</span>
+                                </div>
+                                <input type="range" class="form-range" min="10" max="500" step="5" id="priceRange">
+                                <div class="d-flex justify-content-between mt-2">
+                                    <input type="number" class="form-control form-control-sm" placeholder="Min" style="width: 45%">
+                                    <input type="number" class="form-control form-control-sm" placeholder="Max" style="width: 45%">
+                                </div>
                             </div>
-                            <div class="col pb-2">
-                                <span class="badge text-bg-secondary">New</span>
-                                <span class="badge text-bg-secondary">Test</span>
-                                <span class="badge text-bg-secondary">Negus</span>
+
+                            <!-- Categories Filter -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Categories</h5>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="category1" checked>
+                                    <label class="form-check-label" for="category1">Jewelry</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="category2">
+                                    <label class="form-check-label" for="category2">Clothes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="category3">
+                                    <label class="form-check-label" for="category3">Accesories</label>
+                                </div>
                             </div>
-                            <div class="card-body col border-top">
-                                <h5 class="card-title">Nome prodotto</h5>
-                                <!-- <h6 class="moai">🗿🗿🗿❌❌</h6> -->
-                                <h6 class="moai">💥💥💥❌❌</h6>
+
+                            <!-- Item format Filter -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Item format</h5>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="fotmat1">
+                                    <label class="form-check-label" for="fotmat1"> All </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="format2" checked>
+                                    <label class="form-check-label" for="format2"> Digital </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="format3">
+                                    <label class="form-check-label" for="format3"> Phisical </label>
+                                </div>
+                            
                             </div>
-                            <div class="col d-flex justify-content-center align-items-center p-3">
-                                <button class="btn btn-primary" onclick="">Aggiungi al carrello</button>
+
+                            <!-- Size Filter -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Size</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <button class="btn btn-sm btn-outline-secondary">XS</button>
+                                    <button class="btn btn-sm btn-outline-secondary">S</button>
+                                    <button class="btn btn-sm btn-outline-primary">M</button>
+                                    <button class="btn btn-sm btn-outline-secondary">L</button>
+                                    <button class="btn btn-sm btn-outline-secondary">XL</button>
+                                    <button class="btn btn-sm btn-outline-secondary">XXL</button>
+                                </div>
+                            </div>
+
+                            <!-- Color Filter -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">Color</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <button class="btn btn-sm p-2" style="background-color: #000; width: 30px; height: 30px;" title="Black"></button>
+                                    <button class="btn btn-sm p-2" style="background-color: #fff; border: 1px solid #ddd; width: 30px; height: 30px;" title="White"></button>
+                                    <button class="btn btn-sm p-2" style="background-color: #dc3545; width: 30px; height: 30px;" title="Red"></button>
+                                    <button class="btn btn-sm p-2" style="background-color: #0d6efd; width: 30px; height: 30px;" title="Blue"></button>
+                                    <button class="btn btn-sm p-2" style="background-color: #198754; width: 30px; height: 30px;" title="Green"></button>
+                                </div>
+                            </div>
+
+                            <!-- Rating Filter -->
+                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                            
+                            <div class="mb-4">
+                                <h5 class="mb-3">Rating</h5>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rating5">
+                                    <label class="form-check-label" for="rating5">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rating4">
+                                    <label class="form-check-label" for="rating4">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rating3">
+                                    <label class="form-check-label" for="rating3">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rating2">
+                                    <label class="form-check-label" for="rating3">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rating1">
+                                    <label class="form-check-label" for="rating3">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary w-100">Apply Filters</button>
+                            <button class="btn btn-link w-100 mt-2">Reset All</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Column -->
+                <div class="col-lg-9">
+                    <!-- Sorting Options -->
+                    <div class="card mb-4">
+                        <div class="card-body py-2">
+                            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                                <div class="mb-2 mb-md-0">
+                                    <span class="me-2">Sort by:</span>
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary active">Best Match</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Price Low-High</button>
+                                        <button type="button" class="btn btn btn-sm btn-outline-secondary">Price High-Low</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Top Rated</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Newest</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="me-2">View:</span>
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                                            <i class="bi bi-grid"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                                            <i class="bi bi-list-ul"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- #################### END CARD #################### -->
-                </section>
+
+                    <!-- Product Grid -->
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                        <!-- Product 1 -->
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="position-relative">
+                                    <img src="resources/PastaAdd.jpg" class="card-img-top" alt="Product Image">
+                                    <span class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1 m-2 small">Sale</span>
+                                    <button class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2">
+                                        <i class="bi bi-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Pasta-tron 5000</h5>
+                                    <div class="mb-2">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="text-danger fw-bold">$19.99</span>
+                                            <span class="text-decoration-line-through text-muted small ms-2">$20.00</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-primary">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="position-relative">
+                                    <img src="resources/SockAdd.jpg" class="card-img-top" alt="Product Image">
+                                    <button class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2">
+                                        <i class="bi bi-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Cargo Socks</h5>
+                                    <div class="mb-2">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="fw-bold">$129.99</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-primary">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="position-relative">
+                                    <img src="#" class="card-img-top" alt="Product Image">
+                                    <span class="position-absolute top-0 start-0 bg-success text-white px-2 py-1 m-2 small">New</span>
+                                    <button class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2">
+                                        <i class="bi bi-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Your Dad</h5>
+                                    <div class="mb-2">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="fw-bold">$9.99</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-primary">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation" class="mt-5">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <section class="pb-1">
-                <nav aria-label="Page navigation" style="background: transparent;">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </section>
+        </div>
     </main>
+
+   
+
 
     <footer class="footer">
         <div class="container">
@@ -450,118 +637,11 @@
             <img src="resources/saddam_hussein.png" alt="" width="100px">
         </div>
     </footer>
-
-
-    <!-- TOAST NOT COMPLETED!! -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <img src="..." class="rounded me-2" alt="...">
-                <strong class="me-auto">Bootstrap</strong>
-                <small>11 mins ago</small>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-                Hello, world! This is a toast message.
-            </div>
-        </div>
-    </div>
-
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="loginEmail" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="loginPassword" placeholder="Password">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="rememberMe">
-                            <label class="form-check-label" for="rememberMe">Remember me</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Login</button>
-                    </form>
-                    <div class="text-center mt-3">
-                        <p>Don't have an account? <a href="#" data-bs-toggle="modal"
-                                data-bs-target="#registerModal">Sign up</a></p>
-                        <p><a href="#">Forgot password?</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Register Modal -->
-    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="registerModalLabel">Create Account</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="registerName" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="registerName" placeholder="Your Name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="registerLastname" class="form-label">Lastname</label>
-                            <input type="text" class="form-control" id="registerName" placeholder="Your Lastname">
-                        </div>
-                        <div class="mb-3">
-                            <label for="registerEmail" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="registerEmail" placeholder="name@example.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="registerPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="registerPassword" placeholder="Password">
-                        </div>
-                        <div class="mb-3">
-                            <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
-                            <input type="password" class="form-control" id="registerConfirmPassword"
-                                placeholder="Confirm Password">
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Register</button>
-                    </form>
-                    <div class="text-center mt-3">
-                        <p>Already have an account? <a href="#" data-bs-toggle="modal"
-                                data-bs-target="#loginModal">Login</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"></script>
-    <!-- BOOTSTRAP & POPPER -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-        crossorigin="anonymous"></script>
-    <script src="js/index.js"></script>
-
-    <script>
-        // load the header from its template
-        $.get("./template/header.html", function (data) {
-            $("header").append(data);
-        });
-        // load the footer from its template
-        $.get("./template/footer.html", function (data) {
-            $("footer").append(data);
-        });
-    </script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Custom JS -->
+    <script src="js/search.js"></script>
 </body>
-
 </html>

@@ -181,6 +181,7 @@ nav {
     z-index: 1000;
 }
 
+
 .group:hover .dropdown-menu-fade {
     opacity: 1;
     visibility: visible;
@@ -230,3 +231,74 @@ nav {
 .modal-body a:hover {
     text-decoration: underline;
 }
+
+/* Navbar styles */
+.navbar {
+    padding: 0.5rem 0;
+}
+
+.navbar-toggler {
+    margin-left: auto;
+    border: none;
+}
+
+/* Collapsed menu styles */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #f8f9fa;
+        z-index: 1000;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        border-top: 1px solid #dee2e6;
+    }
+    
+    .navbar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .nav-item {
+        margin-right: 1rem;
+    }
+
+
+}
+
+/* Carousel Custom Styles */
+.carousel {
+    margin-top: -1px; /* Removes gap between navbar and carousel */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+    max-height: 500px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 70%;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+    bottom: 30%;
+}
+
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.checked {
+    color: orange;
+  }
